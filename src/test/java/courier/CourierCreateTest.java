@@ -106,7 +106,7 @@ public class CourierCreateTest {
 
     @After
     public void tearDown() {
-        // Чистим данные — только если курьер был создан
+        // чистим данные — только если курьер был создан
         if (courierId != 0) {
             deleteCourier(courierId);
         }

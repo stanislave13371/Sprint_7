@@ -38,7 +38,7 @@ public class CourierLoginTest {
 
     @Test
     public void testCannotLoginWithoutRequiredField() {
-        // Нет пароля
+        // нет пароля
         given()
                 .contentType("application/json")
                 .body("{ \"login\": \"" + login + "\" }")

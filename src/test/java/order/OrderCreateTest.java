@@ -37,7 +37,7 @@ public class OrderCreateTest {
 
     @Test
     public void testCreateOrderWithDifferentColors() {
-        // Создание заказа с разными цветами
+        // создание заказа с разными цветами
         createOrder(color)
                 .then()
                 .statusCode(201)

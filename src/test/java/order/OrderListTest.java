@@ -9,6 +9,7 @@ public class OrderListTest {
 
     @BeforeClass
     public static void setUpClass() {
+
         io.restassured.RestAssured.baseURI = "https://qa-scooter.praktikum-services.ru";
     }
 
