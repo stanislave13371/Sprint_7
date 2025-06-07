@@ -1,28 +1,28 @@
 package order;
 
-import io.qameta.allure.Step;
 import org.junit.*;
-import static io.restassured.RestAssured.given;
+import steps.OrderApi;
+
 import static org.hamcrest.Matchers.*;
 
 public class OrderListTest {
+    private OrderApi orderApi;
 
     @BeforeClass
     public static void setUpClass() {
         io.restassured.RestAssured.baseURI = "https://qa-scooter.praktikum-services.ru";
     }
 
+    @Before
+    public void setUp() {
+        orderApi = new OrderApi();
+    }
+
     @Test
     public void testGetOrderList() {
-        getOrderList()
+        orderApi.getOrderList()
                 .then()
                 .statusCode(200)
                 .body("orders", notNullValue());
-    }
-
-    @Step("Получить список заказов")
-    public io.restassured.response.Response getOrderList() {
-        return given()
-                .get("/api/v1/orders");
     }
 }
