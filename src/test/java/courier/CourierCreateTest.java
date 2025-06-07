@@ -11,7 +11,7 @@ import static org.hamcrest.Matchers.*;
 public class CourierCreateTest {
     private CourierApi courierApi;
     private Courier testCourier;
-    private int courierId = 0;
+    private int courierId;
 
     @BeforeClass
     public static void setUpClass() {

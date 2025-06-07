@@ -1,8 +1,10 @@
 package model;
 
-import java.util.List;
+import lombok.Data;
 
+@Data
 public class Order {
+
     private String firstName;
     private String lastName;
     private String address;
@@ -11,10 +13,10 @@ public class Order {
     private int rentTime;
     private String deliveryDate;
     private String comment;
-    private List<String> color;
+    private String[] color;
 
-    public Order(String firstName, String lastName, String address, int metroStation, String phone,
-                 int rentTime, String deliveryDate, String comment, List<String> color) {
+    public Order(String firstName, String lastName, String address, int metroStation,
+                 String phone, int rentTime, String deliveryDate, String comment, String[] color) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.address = address;

@@ -42,12 +42,12 @@ public class OrderCreateTest {
 
     @Test
     public void testCreateOrderWithDifferentColors() {
+        String[] color = {"BLACK", "GREY"};
         Order order = new Order(
                 "Test", "User", "Москва, ул. Пушкина, 1", 4,
                 "+7 999 888 77 66", 3, "2025-05-20",
                 "Тестовый заказ", color);
         Response response = orderApi.createOrder(order);
-        response.then().statusCode(201)
-                .body("track", notNullValue());
+        response.then().statusCode(201).body("track", notNullValue());
     }
 }
